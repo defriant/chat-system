@@ -1,0 +1,68 @@
+:root {
+    /* ===== Colors ===== */
+    --hue: 30;
+
+    --firstColor: hsl(var(--hue), 90%, 40%);
+    --secondColor: hsl(var(--hue), 90%, 90%);
+
+    /* --first-color: hsl(var(--hue-color), 61%, 49%);
+    --first-color-darker: hsl(var(--hue-color), 61%, 39%);
+    --first-color-lighter: hsl(var(--hue-color), 61%, 59%); */
+}
+
+/**
+ * ==============================================
+ * Dot Flashing
+ * ==============================================
+ */
+.dot-flashing {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--firstColor);
+    color: var(--firstColor);
+    animation: dotFlashing .6s infinite linear alternate;
+    animation-delay: .3s;
+}
+
+.dot-flashing::before,
+.dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+
+.dot-flashing::before {
+    left: -8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--firstColor);
+    color: var(--firstColor);
+    animation: dotFlashing .6s infinite alternate;
+    animation-delay: 0s;
+}
+
+.dot-flashing::after {
+    left: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--firstColor);
+    color: var(--firstColor);
+    animation: dotFlashing .6s infinite alternate;
+    animation-delay: .6s;
+}
+
+@keyframes dotFlashing {
+    0% {
+        background-color: var(--firstColor);
+    }
+
+    50%,
+    100% {
+        background-color: var(--secondColor);
+    }
+}

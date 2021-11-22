@@ -1,0 +1,289 @@
+/* ===== Font ===== */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../font/OpenSans-SemiBold.ttf');
+}
+
+
+/* ===== Variables ===== */
+:root {
+    /* ===== Colors ===== */
+    --hue: 30;
+
+    --firstColor: hsl(var(--hue), 90%, 40%);
+    --firstColorDarker: hsl(var(--hue), 86%, 36%);
+    --firstColorLighter: hsl(var(--hue), 94%, 44%);
+    --bgColor: hsl(var(--hue), 9%, 95%);
+    --titleColor: hsl(var(--hue), 8%, 25%);
+    --textColor: hsl(var(--hue), 8%, 55%);
+    --borderColor: hsl(var(--hue), 8%, 65%);
+    --borderColorLight: hsl(var(--hue), 8%, 90%);
+    --linkHoverColor: hsl(var(--hue), 61%, 93%);
+    --checkboxBgColor: hsl(var(--hue), 61%, 90%);
+    --checkboxBgHover: hsl(var(--hue), 61%, 87%);
+    --btnDisabled: hsl(var(--hue), 90%, 70%);
+
+
+    /* ===== Font Size ===== */
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --logo-font-size: 1.1rem;
+    --title-font-size: 1rem;
+    --normal-font-size: .875rem;
+    --small-font-size: .775rem;
+    --smaller-font-size: .675rem;
+}
+
+
+/* ===== Base ===== */
+body {
+    font-family: 'Open Sans';
+    background-color: var(--bgColor);
+}
+
+h5,
+h4,
+h3,
+h2,
+h1 {
+    color: var(--titleColor);
+}
+
+p {
+    color: var(--textColor);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    height: 100vh;
+}
+
+/* ===== INPUT GROUP ===== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset !important;
+}
+
+.input_group {
+    padding: .5rem;
+    background-color: #fff;
+    border: 1px solid var(--borderColor);
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.input_icon_left {
+    font-size: 1.2rem;
+    color: var(--textColor);
+    margin: 0 .5rem 0 .5rem;
+    width: 20px;
+}
+
+.input_form {
+    outline: none;
+    border: none;
+    font-size: var(--normal-font-size);
+    color: var(--titleColor);
+    width: 230px;
+}
+
+.input_group:focus-within {
+    border: 1px solid var(--firstColorLighter);
+}
+
+.input_group:focus-within .input_icon_left {
+    color: var(--firstColorLighter);
+}
+
+
+/* ===== CHECKBOX ===== */
+.check-group {
+    display: flex;
+    align-items: center;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: var(--checkboxBgColor);
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.check-label {
+    color: var(--textColor);
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    margin-left: .5rem;
+}
+
+.checkbox:after {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 12px;
+    color: white;
+    display: none;
+}
+
+.checkbox:hover {
+    background-color: var(--checkboxBgHover);
+}
+
+.checkbox:checked {
+    background-color: var(--firstColor);
+}
+
+.checkbox:checked:after {
+    display: block;
+}
+
+/* ===== BUTTON ===== */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 1rem .5rem 1rem;
+    font-size: var(--normal-font-size);
+    color: #fff;
+    background-color: var(--firstColor);
+    margin: 1.5rem 0 1rem auto;
+    transition: .3s;
+}
+
+.button_icon_right {
+    padding-top: 3px;
+    margin: 0 0 0 .5rem;
+    font-size: 1.2rem;
+}
+
+.button:hover {
+    background-color: var(--firstColorDarker);
+    transition: .3s;
+}
+
+.button-block {
+    width: 100%;
+}
+
+.button.disabled {
+    background-color: var(--btnDisabled);
+    cursor: auto;
+}
+
+
+
+/* ===== LOGIN ===== */
+.login-section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    padding: 2rem;
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 7px;
+    background-color: #fff;
+}
+
+.login-title {
+    font-size: var(--title-font-size);
+    color: var(--titleColor);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.others {
+    display: grid;
+    align-items: center;
+    gap: .5rem;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.others span {
+    font-size: var(--normal-font-size);
+    color: var(--textColor);
+    margin: 0;
+    padding: 0;
+}
+
+.google-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 2.5rem 2rem 2.5rem;
+}
+
+.google-login img {
+    width: 25px;
+    height: 25px;
+}
+
+.google-login h4 {
+    font-size: var(--normal-font-size);
+    color: var(--textColor);
+    margin: 0 0 0 1rem;
+    transition: .3s;
+}
+
+.google-login:hover {
+    cursor: pointer;
+}
+
+.google-login:hover h4 {
+    color: var(--firstColor);
+}
+
+.forgot-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.forgot-password a {
+    font-size: var(--normal-font-size);
+    color: #38bdff;
+}
+
+.no-account {
+    text-align: center;
+}
+
+.no-account h4 {
+    font-size: var(--normal-font-size);
+    color: var(--titleColor);
+    margin-bottom: .2rem;
+}
+
+.no-account a {
+    font-size: var(--normal-font-size);
+    color: #38bdff;
+}
